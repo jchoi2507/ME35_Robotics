@@ -13,7 +13,7 @@ darkLightSensorArray = [] # Array for light sensor readings during motor trainin
 ambientLightSensorArray = [] # Array for light sensor readings during motor training
 brightLightSensorArray = [] # Array for light sensor readings during motor training
 
-servoPositionDict = {"LOWEST": 0, "MEDIUM": 90, "HIGHEST": 180} # Dictionary for possible servo positions
+servoPositionDict = {"LOWEST": 180, "MEDIUM": 135, "HIGHEST": 90} # Dictionary for possible servo positions
     
 PRECISION = 5 # Represents the number of data points the program will account for during training
               # Increasing PRECISIONN increases overall accuracy during training
