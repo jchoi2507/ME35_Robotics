@@ -3,6 +3,7 @@ import math
 from motorController import *
 from MC_Consts import *
 from machine import Pin, ADC
+from shape_functions import *
 
 ## Photo Art w/ 2 DOF Wooden Robotic Arm
 ## w/ Inverse Kinematics Implementetation
