@@ -21,7 +21,9 @@ if __name__ == "__main__":
         data = response.json()
         predictedAge_str = str(data["age"]) # API response
 
+        count = str(data["count"]) # API response
+
         s.write(predictedAge_str.encode()) # Sending to Arduino through serial
 
-        print(nameToAgify + " should be " + predictedAge_str + " years old!\n")
+        print(nameToAgify + " should be " + predictedAge_str + " years old from " + count + " data sets!\n")
         time.sleep(1)
