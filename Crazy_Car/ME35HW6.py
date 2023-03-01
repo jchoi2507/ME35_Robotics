@@ -47,10 +47,9 @@ def APIListen():
 # startRP2040() executes the main() function in "CrazyCar.py" on the RP2040
 def startRP2040():
 	print("Executing command...")
-	print(s.read_all())
 	s.write(b'import RP2040_CrazyCar\r\n')
 	s.write(b'RP2040_CrazyCar.main()\r\n') # Run main() in RP2040_CrazyCar.py
 
 if __name__ == "__main__":
-	APIListen()
+	APIListen() # blocking function
 	startRP2040()
