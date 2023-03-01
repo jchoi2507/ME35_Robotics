@@ -18,3 +18,19 @@
 - serial.py: UART serial communication class, default constructor set to UART(0), which, on the ESP8266, means a baudrate of 115200, must be loaded onto both RP2040 & ESP8266
 
 - secrets.py: WiFi login info, API base ID & token key & authentication headers
+
+# Changes for Game Day
+
+**All changes must be updated on both RP2040 & ESP8266**
+
+- ME35HW6.py
+    - Airtable API configurations (URL + headers)
+
+- RP2040_CrazyCar.py
+    - MQTT broker IP address
+    - MQTT topic names
+    - MQTT WiFi connection SSID 
+    - MQTT published message/command
+
+- secrets.py
+    - Tufts_Secure SSID & pass info
