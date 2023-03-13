@@ -15,6 +15,8 @@ import mqtt_CBR
 from secrets import *
 from machine import Pin, ADC
 
+LED = Pin(29, Pin.OUT)
+
 def parseAngles():
     file = open("motor_angles.txt")
     data = json.load(file)
@@ -48,5 +50,7 @@ def sendAngles(theta1, theta2):
         time.sleep(5)
 
 def main():
+    LED.value(1)
     theta1, theta2 = parseAngles()
     sendAngles(theta1, theta2)
+    LED.value(0)
