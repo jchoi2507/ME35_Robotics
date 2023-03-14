@@ -30,7 +30,6 @@ def whenCalled(topic, msg):
 
 def sendAngles(theta1, theta2):
     # MQTT connection
-    
     mqttBroker = "10.0.0.125"
     topicPub = "angles"
     clientID = "Jacob"
@@ -47,10 +46,11 @@ def sendAngles(theta1, theta2):
     
         client.publish(topicPub, msg)
         counter += 1
-        time.sleep(5)
+        time.sleep(4)
 
 def main():
     LED.value(1)
     theta1, theta2 = parseAngles()
     sendAngles(theta1, theta2)
     LED.value(0)
+    
