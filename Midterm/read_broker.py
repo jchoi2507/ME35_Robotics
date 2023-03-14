@@ -12,11 +12,8 @@ the current position of the two links
 import paho.mqtt.client as mqtt
 import matplotlib.pyplot as plt
 import math
-import time
-import json
 import requests
 from mySecrets import *
-from queue import Queue
 
 theta1 = []
 theta2 = []
@@ -30,7 +27,7 @@ plt.ion()
 figure, ax = plt.subplots(figsize=(10, 8))
 line1, = ax.plot([0, -5.562148865321747], [0, -4.25], label="Shoulder Link")
 line2, = ax.plot([-5.562148865321747, 0], [-4.25, -16], label="Leg Link")
-plt.title("Link Position Validation Plot")
+plt.title("Current Link Locations")
 plt.legend(loc="upper right")
 plt.xlabel("x-position (cm)")
 plt.ylabel("y-position (cm)")
@@ -87,7 +84,7 @@ def on_message(client, userdata, message):
         
         angle2 = message[message.index(",") + 1:] # Indexing AFTER the comma, indicating leg motor angle
         angle2 = angle2[:-1] # Removing closing parantheses
-    
+
     postAngles(angle1, angle2)
     updateGraph(float(angle1), float(angle2))
 
